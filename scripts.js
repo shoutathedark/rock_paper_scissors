@@ -83,3 +83,80 @@ function playRound(){
 
     else return "Computer is the winner!"
 }
+
+const rockbtn = document.querySelector('.rocks');
+const scissors = document.querySelector(".scissors");
+const paper = document.querySelector(".paper");
+const newscore = document.querySelector(".scores");
+
+var playerwins = 0;
+var computerwins = 0;
+
+rockbtn.addEventListener("click", function(){
+    var result = playgame("rock", getComputerChoice());
+    if(result.includes("Tie!")){
+    }
+    
+    else if(result.includes("win")){
+        playerwins++;
+    }
+    else {computerwins++;}
+
+    newscore.textContent = "Player score: " + playerwins + ". Computer score: " + computerwins
+
+    if(playerwins >4){
+        alert("Player has won!")
+    }
+
+    else if (computerwins > 4){
+        alert("Computer has won!")
+    }
+
+    else {}
+});
+
+paper.addEventListener("click", function(){
+    var result = playgame("paper", getComputerChoice());
+    if(result.includes("Tie!")){
+    }
+    
+    else if(result.includes("win")){
+        playerwins++;
+    }
+    else {computerwins++;}
+
+    newscore.textContent = "Player score: " + playerwins + ". Computer score: " + computerwins
+
+    if(playerwins >4){
+        alert("Player has won!")
+    }
+
+    else if (computerwins > 4){
+        alert("Computer has won!")
+    }
+
+    else {}
+});
+
+scissors.addEventListener("click", function(){
+    var result = playgame("scissors", getComputerChoice());
+    if(result.includes("Tie!")){ 
+    }
+    
+    else if(result.includes("win")){
+        playerwins++;
+    }
+    else {computerwins++;}
+
+    newscore.textContent = "Player score: " + playerwins + ". Computer score: " + computerwins
+
+    if(playerwins >4){
+        alert("Player has won!")
+    }
+
+    else if (computerwins > 4){
+        alert("Computer has won!")
+    }
+
+    else {}
+});
